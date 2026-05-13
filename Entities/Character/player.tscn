@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4g0u77inw2oa"]
+
+[ext_resource type="PackedScene" uid="uid://76fthivrp4ub" path="res://Entities/base_entity.tscn" id="1_l1r5h"]
+[ext_resource type="Script" uid="uid://b26jdjd1fwtrc" path="res://Entities/Character/player_controller.gd" id="1_t4ad6"]
+[ext_resource type="Texture2D" uid="uid://bhouahq5cjydr" path="res://Entities/Character/PlayerCharacter.png" id="2_t4ad6"]
+[ext_resource type="Script" uid="uid://bbfcqsa20tud3" path="res://Scripts/Components/input_component.gd" id="3_i7wby"]
+[ext_resource type="Script" uid="uid://dsum52x4iklxk" path="res://Scripts/Components/movement_component.gd" id="4_qcf6i"]
+
+[node name="BaseEntity" instance=ExtResource("1_l1r5h")]
+script = ExtResource("1_t4ad6")
+speed = 400.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_t4ad6")
+
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
+
+[node name="InputComponent" type="Node" parent="." index="2"]
+unique_name_in_owner = true
+script = ExtResource("3_i7wby")
+metadata/_custom_type_script = "uid://bbfcqsa20tud3"
+
+[node name="MovementComponent" type="Node" parent="." index="3"]
+unique_name_in_owner = true
+script = ExtResource("4_qcf6i")
+metadata/_custom_type_script = "uid://dsum52x4iklxk"

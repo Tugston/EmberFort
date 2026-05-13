@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dds304cuwnbnw"]
+
+[ext_resource type="PackedScene" uid="uid://bkavigxv8imtg" path="res://Entities/Resources/base_resource.tscn" id="1_srcqt"]
+[ext_resource type="Texture2D" uid="uid://cgf4jinrt8hrw" path="res://Entities/Resources/Stone/Textures/rock_1.png" id="2_g25iu"]
+
+[node name="BaseResource" instance=ExtResource("1_srcqt")]
+textures = Array[Texture2D]([ExtResource("2_g25iu")])

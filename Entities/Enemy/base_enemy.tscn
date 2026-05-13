@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://7n6hqr0jlr8h"]
+
+[ext_resource type="Script" uid="uid://bavg7rmbh3gmj" path="res://Entities/Enemy/base_enemy_controller.gd" id="1_8rqot"]
+[ext_resource type="PackedScene" uid="uid://76fthivrp4ub" path="res://Entities/base_entity.tscn" id="1_q7dxq"]
+[ext_resource type="Script" uid="uid://dsum52x4iklxk" path="res://Scripts/Components/movement_component.gd" id="3_8rqot"]
+
+[node name="BaseEntity" instance=ExtResource("1_q7dxq")]
+script = ExtResource("1_8rqot")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+
+[node name="MovementComponent" type="Node" parent="." index="1"]
+unique_name_in_owner = true
+script = ExtResource("3_8rqot")
+metadata/_custom_type_script = "uid://dsum52x4iklxk"

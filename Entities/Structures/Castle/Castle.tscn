@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw5sj4n1s3msw"]
+
+[ext_resource type="PackedScene" uid="uid://cte6oyoba1h54" path="res://Entities/Structures/base_structure.tscn" id="1_4hqmo"]
+[ext_resource type="Texture2D" uid="uid://cmbi3ic8osggh" path="res://Entities/Structures/Castle/Castle.png" id="2_slf10"]
+
+[node name="BaseStructure" instance=ExtResource("1_4hqmo")]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_slf10")
