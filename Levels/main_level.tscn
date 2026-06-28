@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://dtp83f1a4b5p2"]
+[gd_scene load_steps=12 format=4 uid="uid://dtp83f1a4b5p2"]
 
 [ext_resource type="PackedScene" uid="uid://d4g0u77inw2oa" path="res://Entities/Character/player.tscn" id="1_k6a8t"]
-[ext_resource type="Script" uid="uid://ignx2u0d0l5c" path="res://Scripts/Functionality/spawners/enemy_spawner.gd" id="2_k0okc"]
+[ext_resource type="Script" uid="uid://ignx2u0d0l5c" path="res://Scripts/Functionality/Managers/enemy_manager.gd" id="2_k0okc"]
 [ext_resource type="Texture2D" uid="uid://xl184ylb7w78" path="res://Misc/Terrain.png" id="4_13urm"]
-[ext_resource type="Script" uid="uid://medo0836sv3i" path="res://Scripts/Functionality/spawners/resource_spawner.gd" id="5_2clls"]
+[ext_resource type="Script" uid="uid://medo0836sv3i" path="res://Scripts/Functionality/Managers/resource_manager.gd" id="5_2clls"]
 [ext_resource type="PackedScene" uid="uid://dds304cuwnbnw" path="res://Entities/Resources/Stone/stone_resource.tscn" id="5_6opdx"]
 [ext_resource type="PackedScene" uid="uid://dw5sj4n1s3msw" path="res://Entities/Structures/Castle/Castle.tscn" id="5_k6a8t"]
 [ext_resource type="Script" uid="uid://dhyade8ohl2xi" path="res://Levels/GridLayout/grid_layout.gd" id="6_k6a8t"]
+[ext_resource type="PackedScene" uid="uid://cvntfdhy8ksf1" path="res://Entities/Resources/Wood/wood_resource.tscn" id="7_3d006"]
 [ext_resource type="Script" uid="uid://scmbpdaa4hn6" path="res://Scripts/Functionality/game_state.gd" id="7_wcg7u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6opdx"]
@@ -57,27 +58,30 @@ script = ExtResource("6_k6a8t")
 grid_size = Vector2i(32, 32)
 metadata/_custom_type_script = "uid://dhyade8ohl2xi"
 
-[node name="GameState" type="Node" parent="Gameplay"]
+[node name="GameState" type="Node2D" parent="Gameplay"]
 unique_name_in_owner = true
 script = ExtResource("7_wcg7u")
 player_spawn_position = Vector2i(4, 0)
+castle_spawn_position = Vector2i(10, 10)
 metadata/_custom_type_script = "uid://scmbpdaa4hn6"
 
-[node name="Spawners" type="Node" parent="Gameplay"]
+[node name="Managers" type="Node" parent="Gameplay"]
 
-[node name="EnemySpawner" type="Node" parent="Gameplay/Spawners"]
+[node name="EnemyManager" type="Node" parent="Gameplay/Managers"]
 script = ExtResource("2_k0okc")
 spawn_points = Array[Vector2]([Vector2(-592, -600), Vector2(1398, -600), Vector2(1393, 915), Vector2(-588, 910)])
 
-[node name="ResourceSpawner" type="Node" parent="Gameplay/Spawners"]
+[node name="ResourceManager" type="Node" parent="Gameplay/Managers"]
 script = ExtResource("5_2clls")
-resource_scenes = Array[PackedScene]([ExtResource("5_6opdx")])
+resource_scenes = Array[PackedScene]([ExtResource("5_6opdx"), ExtResource("7_3d006")])
 metadata/_custom_type_script = "uid://medo0836sv3i"
 
 [node name="Characters" type="Node" parent="."]
 
 [node name="Player" parent="Characters" instance=ExtResource("1_k6a8t")]
 unique_name_in_owner = true
+speed = null
+type = null
 
 [node name="Towers" type="Node" parent="."]
 

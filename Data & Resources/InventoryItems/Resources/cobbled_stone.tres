@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://bu434q8c7m2pa"]
+
+[ext_resource type="Texture2D" uid="uid://dm8iqeubodynw" path="res://icon.svg" id="1_jgq3q"]
+[ext_resource type="Script" uid="uid://cl5yhbe28ncpk" path="res://Scripts/Components/Inventory/resource_item.gd" id="2_mosbi"]
+
+[resource]
+script = ExtResource("2_mosbi")
+item_id = 1
+item_name = "Cobbled Stone"
+icon = ExtResource("1_jgq3q")
+max_stack = 10
+metadata/_custom_type_script = "uid://cl5yhbe28ncpk"

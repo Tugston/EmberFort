@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://76fthivrp4ub" path="res://Entities/base_entity.tscn" id="1_8oanm"]
 [ext_resource type="Script" uid="uid://bbqs4dg6tt7n5" path="res://Entities/Resources/base_resource_controller.gd" id="1_srooh"]
-[ext_resource type="Texture2D" uid="uid://cgf4jinrt8hrw" path="res://Entities/Resources/Stone/Textures/rock_1.png" id="3_i6g02"]
+[ext_resource type="Texture2D" uid="uid://722rkpsoyo2c" path="res://Entities/Resources/Stone/Textures/Rocks_1.png" id="3_i6g02"]
 
 [node name="BaseEntity" instance=ExtResource("1_8oanm")]
 script = ExtResource("1_srooh")

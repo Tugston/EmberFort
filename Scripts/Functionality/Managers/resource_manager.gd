@@ -8,7 +8,6 @@ class_name ResourceSpawner extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_process(false)
 	spawn_random_resources()
 	pass # Replace with function body.
 
@@ -19,11 +18,10 @@ func spawn_random_resources() -> void:
 	if not resource_filter_node:
 		resource_filter_node = self
 	
-	var count := 0
+	
 	var grid: GridLayout = game_state.grid
 	for i in range(grid.grid_size.x):
 		for y in range(grid.grid_size.y):
-			count += 1
 			var number: int = randi() % 100 + 1
 			var resource_spawn: int = randi() % resource_scenes.size()
 
@@ -41,5 +39,4 @@ func spawn_random_resources() -> void:
 				print("here")
 				resource.queue_free()
 				push_error("Resource Spawner Trying To Spawn Unknown Resource!")
-	print(count)
 	return

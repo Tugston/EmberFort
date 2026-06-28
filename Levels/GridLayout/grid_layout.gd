@@ -16,9 +16,9 @@ func grid_pos_to_world_pos(grid_position: Vector2i) -> Vector2:
 func world_pos_to_grid_pos(world_pos: Vector2) -> Vector2i:
 	return Vector2i((world_pos / cell_size).floor())
 
+#spawn new item
 func place_item(entity: BaseEntity, grid_position: Vector2i) -> bool:
 	if _validate_position(grid_position):
-		print("placed item at:", grid_position)
 		grid_data[grid_position] = entity
 		entity.position = grid_pos_to_world_pos(grid_position)
 		entity.grid_position = grid_position
@@ -42,6 +42,12 @@ func move_item(entity: BaseEntity, grid_position: Vector2i) -> bool:
 		entity.grid_position = grid_position
 		return true
 	return false
+
+#returns null if the object is not found
+func get_entity_in_cell(grid_position: Vector2i) -> BaseEntity:
+	if grid_data.has(grid_position):
+		return grid_data[grid_position]
+	return null
 
 #returns true if the position is not occupied and is valid
 func _validate_position(position: Vector2i) -> bool:

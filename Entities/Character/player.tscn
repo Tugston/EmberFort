@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4g0u77inw2oa"]
+[gd_scene load_steps=7 format=3 uid="uid://d4g0u77inw2oa"]
 
 [ext_resource type="PackedScene" uid="uid://76fthivrp4ub" path="res://Entities/base_entity.tscn" id="1_l1r5h"]
 [ext_resource type="Script" uid="uid://b26jdjd1fwtrc" path="res://Entities/Character/player_controller.gd" id="1_t4ad6"]
 [ext_resource type="Texture2D" uid="uid://bhouahq5cjydr" path="res://Entities/Character/PlayerCharacter.png" id="2_t4ad6"]
 [ext_resource type="Script" uid="uid://bbfcqsa20tud3" path="res://Scripts/Components/input_component.gd" id="3_i7wby"]
 [ext_resource type="Script" uid="uid://dsum52x4iklxk" path="res://Scripts/Components/movement_component.gd" id="4_qcf6i"]
+[ext_resource type="Script" uid="uid://dtc51m70pfrvr" path="res://Scripts/Components/Inventory/inventory_component.gd" id="6_01tja"]
 
 [node name="BaseEntity" instance=ExtResource("1_l1r5h")]
 script = ExtResource("1_t4ad6")
@@ -24,3 +25,8 @@ metadata/_custom_type_script = "uid://bbfcqsa20tud3"
 unique_name_in_owner = true
 script = ExtResource("4_qcf6i")
 metadata/_custom_type_script = "uid://dsum52x4iklxk"
+
+[node name="InventoryComponent" type="Node" parent="." index="4"]
+unique_name_in_owner = true
+script = ExtResource("6_01tja")
+metadata/_custom_type_script = "uid://dtc51m70pfrvr"

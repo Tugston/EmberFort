@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://b2y0sdfky2o3n"]
+
+[ext_resource type="Texture2D" uid="uid://dm8iqeubodynw" path="res://icon.svg" id="1_hu75n"]
+[ext_resource type="Script" uid="uid://cl5yhbe28ncpk" path="res://Scripts/Components/Inventory/resource_item.gd" id="1_wr726"]
+
+[resource]
+script = ExtResource("1_wr726")
+item_name = "Oak Log"
+icon = ExtResource("1_hu75n")
+max_stack = 25
+metadata/_custom_type_script = "uid://cl5yhbe28ncpk"
